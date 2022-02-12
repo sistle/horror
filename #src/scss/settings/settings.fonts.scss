@@ -1,0 +1,22 @@
+// <Fonts>===============================================================================================
+// &display=swap&subset=cyrillic-ext
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff2") format("woff2"), url("../fonts/#{$file_name}.woff") format("woff");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+@include font("Hauora", "Hauora-ExtraBold", "800", "normal");
+@include font("Hauora", "Hauora-Bold", "700", "normal");
+@include font("Hauora", "Hauora-SemiBold", "600", "normal");
+@include font("Hauora", "Hauora-Regular", "300", "normal");
+@include font("Montserrat", "Montserrat-Bold", "700", "normal");
+@include font("Montserrat", "Montserrat-Regular", "300", "normal");
+
+@include font("Icons", "icons", "400", "normal");
+
+// </Fonts>=======================================================================================

@@ -1,0 +1,160 @@
+.questions {
+	&__inner {
+		font-family: "Montserrat";
+	}
+
+	&__header {
+		margin-bottom: rem(70);
+		display: inline-grid;
+		grid-template: 1fr 1fr / minmax(400px, 1fr) 1fr;
+		grid-template-areas:
+			"title text"
+			"button text";
+		gap: rem(12) 0;
+	}
+
+	&__header-title {
+		grid-area: title;
+		font-size: rem(40);
+	}
+	&__inform {
+		font-size: rem(18);
+		line-height: 2.1;
+		grid-area: text;
+		align-self: center;
+	}
+	&__box {
+		grid-area: button;
+	}
+	&__btn {
+		background-color: $lightRed;
+
+		padding: 16px 32px;
+
+		@include button($lightRed, $mainColor);
+	}
+	&__main {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		min-height: 320px;
+	}
+	&__col {
+		flex: 0 1 rem(480);
+	}
+	&__title {
+		text-align: center;
+		margin-bottom: rem(36);
+	}
+
+	&__caption {
+		position: relative;
+		width: 100%;
+		justify-content: space-between;
+		font-size: rem(20);
+		align-items: center;
+		margin-bottom: rem(30);
+		padding: 0;
+		@include interactive-effects($gray, "color");
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: -15px;
+			width: 100%;
+			height: 1px;
+			background-color: $gray;
+		}
+		&--active {
+			.questions__icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&__text {
+		overflow: hidden;
+		max-height: 0;
+		color: $lightRed;
+		line-height: 1.5;
+		transition: max-height 0.3s linear;
+	}
+
+	&__icon {
+		width: 1.3rem;
+		height: 1.3rem;
+		margin-right: 10px;
+		transition: transform 0.3s ease 0s;
+	}
+}
+@media (max-width: $md1+px) {
+	.questions {
+		&__col {
+			flex: 0 1 rem(460);
+		}
+	}
+}
+
+@media (max-width: $md2+px) {
+	.questions {
+		&__inner {
+			margin-bottom: rem(50);
+		}
+		&__main {
+			justify-content: center;
+			gap: 0;
+		}
+		&__col {
+			flex: 0 1 rem(510);
+			min-height: 0px;
+		}
+		&__icon {
+			margin-right: 0;
+		}
+	}
+}
+
+@media (max-width: $md3+px) {
+	.questions {
+		&__header {
+			margin-bottom: rem(50);
+
+			grid-template-columns: minmax(290px, 1fr);
+			grid-template-rows: auto 1fr auto;
+			grid-template-areas:
+				"title "
+				"text"
+				"button";
+			gap: rem(30) 0;
+			text-align: center;
+			justify-content: center;
+		}
+		&__main {
+			min-height: 0px;
+		}
+		&__caption {
+			font-size: rem(15);
+			margin-bottom: rem(30);
+		}
+		&__text {
+			font-size: rem(14);
+		}
+	}
+}
+@media (max-width: 380px) {
+	.questions {
+		&__caption {
+			font-size: 11px;
+		}
+		&__text {
+			font-size: 10px;
+		}
+	}
+}
+@media (min-width: $md2+px) {
+	.questions {
+		&__caption {
+			font-size: 16px;
+		}
+	}
+}

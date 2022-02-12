@@ -1,0 +1,21 @@
+.social {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $gray;
+	gap: 0 18px;
+	margin-bottom: 54px;
+
+	&__link {
+		color: inherit;
+		font-size: 25px;
+		&:focus {
+			color: $lightRed;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $lightRed;
+			}
+		}
+	}
+}

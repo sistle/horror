@@ -1,0 +1,175 @@
+.license {
+	&__inner {
+		display: grid;
+		grid-template-areas:
+			"header card"
+			"main card";
+		grid-template-columns: [start] 1fr[center] minmax(300px, 450px) [end];
+		grid-template-rows: [row-start] 1fr[row-center] .8fr[row-end];
+		background-color: $lightRed;
+		border-radius: 25px;
+		padding: rem(20) rem(30);
+		margin: 0 0 rem(80) 0;
+	}
+
+	&__header {
+		font-family: "Montserrat";
+		grid-area: header;
+		padding: 0 rem(40) 0 0;
+	}
+
+	&__title {
+		font-weight: bold;
+		font-size: rem(52);
+
+		margin-bottom: rem(25);
+	}
+
+	&__subtitle {
+		font-weight: 300;
+		font-size: rem(22);
+		line-height: 1.4;
+		margin-bottom: rem(15);
+	}
+
+	&__main {
+		grid-area: main;
+		display: grid;
+		grid-template: 1fr 1fr / repeat(2, minmax(140px, 200px));
+		justify-content: left;
+		align-items: center;
+	}
+
+	&__item {
+		text-align: center;
+	}
+
+	&__value {
+		font-weight: 800;
+		font-size: rem(48);
+		margin-bottom: 15px;
+	}
+
+	&__description {
+		font-size: rem(18);
+	}
+
+	&__card {
+		grid-area: card;
+
+		align-self: center;
+	}
+	&__wrapper {
+		border-radius: 15px;
+		overflow: hidden;
+	}
+	&__img {
+		width: 100%;
+		max-width: 451px;
+		height: auto;
+	}
+	&__content {
+		padding: 35px 27px;
+		font-family: "Montserrat";
+		background: #171717;
+	}
+	&__caption {
+		font-weight: bold;
+		font-size: rem(24);
+		margin-bottom: rem(14);
+		display: flex;
+		align-items: center;
+	}
+	&__icon {
+		font-size: 20px;
+		color: $lightRed;
+		margin-right: rem(10);
+	}
+
+	&__text {
+		font-size: rem(18);
+		line-height: 1.7;
+	}
+}
+@media (min-width: $md1+px) {
+	.license {
+		&__inner {
+			margin: 0 rem(-30) rem(80);
+		}
+	}
+}
+@media (max-width: $md2+px) {
+	.license {
+		&__inner {
+			margin: 0 0 rem(80) 0;
+			grid-template-columns: 0.8fr 1.2fr;
+		}
+		&__header {
+			padding: 0 rem(10);
+		}
+		&__title {
+			font-size: 2.7rem;
+			margin-bottom: rem(17);
+		}
+		&__value {
+			font-weight: 800;
+			font-size: rem(30);
+			line-height: 0.68;
+			margin-bottom: 10px;
+		}
+	}
+}
+@media (max-width: 725px) {
+	.license {
+		&__inner {
+			grid-template-areas:
+				"header "
+				"card"
+				"main";
+			grid-template-columns: minmax(290px, 500px);
+			grid-template-rows: 0.4fr auto 0.4fr;
+			justify-content: center;
+			row-gap: rem(45);
+			padding: rem(30) rem(20);
+		}
+		&__header {
+			text-align: center;
+		}
+		&__title {
+			font-size: rem(30);
+		}
+		&__subtitle {
+			margin-bottom: 0;
+		}
+		&__wrapper {
+			width: 100%;
+			max-width: 450px;
+			margin: 0 auto;
+		}
+		&__main {
+			justify-content: center;
+			gap: rem(20) 0;
+		}
+	}
+}
+@media (max-width: $md4+px) {
+	.license {
+		&__inner {
+			margin: 0 0 rem(80) 0;
+			row-gap: rem(35);
+		}
+		&__value {
+			font-size: rem(40);
+		}
+
+		&__description {
+			font-size: rem(15);
+			line-height: 1.3;
+		}
+			&__wrapper {
+			width: 100%;
+			max-width: rem(320);
+			margin: 0 auto;
+		}
+	}
+}

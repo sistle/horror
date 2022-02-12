@@ -1,0 +1,166 @@
+//<Headr>====================================================================================================
+.header {
+	min-height: rem(80);
+	&__wrapper {
+			transition: box-shadow 0.7s ease 0s;
+			position: fixed;
+			width: 100%;
+			left: 0;
+			top: 0;
+			z-index: 30;
+	}
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px 0;
+		min-height: rem(80);
+	}
+	&.scroll {
+		.header__wrapper {
+			background-color: #000;
+			box-shadow: 0px 2px 10px rgba($red, 0.9);
+		}
+	}
+}
+
+.menu {
+
+	&__link {
+		color: $gray;
+
+		transition: color 0.3s linear;
+		position: relative;
+		&.active {
+			color: $lightRed;
+			&::before {
+				width: 100%;
+			}
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: -3px;
+			width: 0;
+			height: 1px;
+			background-color: $lightRed;
+			transition: width 0.2s linear;
+		}
+	}
+}
+.marktplace {
+	position: relative;
+	z-index: 4;
+	&__btn {
+		padding: rem(14) rem(32);
+		border: 1px solid $gray;
+		font-size: rem(14);
+		cursor: pointer;
+		transition: border-color 0.2s ease-in-out 0s;
+		&:hover,
+		&:focus {
+			border-color: $lightRed;
+		}
+	}
+}
+//</Headr>====================================================================================================
+@media (any-hover: hover) {
+	.menu {
+		&__link {
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: -3px;
+				width: 0;
+				height: 1px;
+				background-color: $lightRed;
+				transition: width 0.2s linear;
+			}
+			&:hover {
+				color: $lightRed;
+				&::before {
+					width: 100%;
+				}
+			}
+
+			@media (max-width: $md3+px) {
+				&:hover {
+					color: #000;
+					&::before {
+						width: 100%;
+						background-color: #000;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $md2+px) {
+	.marktplace {
+		order: -1;
+	}
+	.menu {
+		&__inner {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			top: 0;
+			left: -100%;
+			background-color: $lightRed;
+			transition: left 0.3s ease 0s;
+			padding: rem(15) rem(15) rem(0);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			&::before {
+				content: "";
+				position: fixed;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: rem(80);
+				transition: left 0.3s ease 0s;
+				background-color: #000;
+				z-index: 9;
+			}
+			&.active {
+				left: 0;
+				&::before {
+					left: 0;
+				}
+			}
+		}
+		&__list {
+			text-align: center;
+		}
+		&__item {
+			margin-bottom: 1.5rem;
+		}
+		&__link {
+			margin-bottom: 5px;
+			font-size: rem(32);
+			color: $mainColor;
+			&.active {
+				color: #000;
+				&::before {
+					background-color: #000;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $md2+px) {
+	.menu {
+		&__list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			align-items: center;
+			gap: 1rem rem(20);
+		}
+	}
+}

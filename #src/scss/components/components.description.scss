@@ -1,0 +1,14 @@
+.description {
+	padding-left: 1.5rem;
+	position: relative;
+	&::before {
+		@extend %icons;
+		content: "\e905";
+		position: absolute;
+		left: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: $lightRed;
+		font-size: 0.9rem;
+	}
+}

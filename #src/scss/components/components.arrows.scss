@@ -1,0 +1,35 @@
+.cards-arrows,
+.about-arrows {
+	display: flex;
+	justify-content: center;
+	gap: 0 22px;
+	padding: 0 0 70px 0;
+	&__left,
+	&__right {
+		@extend %flex-center;
+		width: 52px;
+		height: 52px;
+		cursor: pointer;
+		border-radius: 50%;
+		background: rgba(236, 1, 1, 0.28);
+
+		position: relative;
+		&::before {
+			@extend %icons;
+			content: "\e902";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			color: $red;
+			font-size: 93px;
+			transition: all 0.3s ease 0s;
+
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		&.slick-disabled {
+			background-color: $gray;
+		}
+	}
+}

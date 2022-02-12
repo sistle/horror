@@ -1,0 +1,21 @@
+//<BUTTONS >====================================================================================================
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: inherit;
+	text-align: center;
+	font-weight: bold;
+	border: 2px solid transparent;
+	border-radius: rem(11);
+	color: inherit;
+	outline: none;
+	padding: 0px 0px;
+	&[disabled] {
+		background-color: rgba(#000, 0.15) !important;
+		color: #fff;
+		cursor: not-allowed;
+	}
+}
+//</BUTTONS>====================================================================================================
+

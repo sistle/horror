@@ -1,0 +1,129 @@
+//====================================================================================================
+.footer {
+	font-size: 12px;
+	border-top: 1px solid $lightRed;
+
+	&__inner {
+		padding: rem(33) 0;
+		border-bottom: 1px solid $gray;
+		display: grid;
+		grid-template-columns: minmax(auto, 250px) minmax(auto, 180px) minmax(auto, 350px) minmax(auto, 140px);
+		gap: 0 35px;
+
+		@media (max-width: $md2+px) {
+			gap: 0 10px;
+		}
+	}
+
+	&__caption {
+		font-weight: bold;
+		font-size: rem(18);
+		line-height: 1.31;
+		margin-bottom: rem(19);
+		@media (max-width: $md2+px) {
+			font-size: rem(16);
+		}
+	}
+
+	&__text {
+		line-height: 1.9;
+		margin-bottom: rem(18);
+	}
+
+	&__mail {
+		color: $lightRed;
+		font-size: rem(18);
+		font-weight: bold;
+	}
+
+	&__nav {
+	}
+
+	&__list {
+	}
+
+	&__item {
+		line-height: 1.9;
+		&:not(:last-child) {
+			margin-bottom: rem(8);
+		}
+	}
+
+	&__link {
+		color: inherit;
+	}
+
+	&__inform {
+	}
+
+	&__inform-link {
+		color: $lightRed;
+		text-decoration: underline;
+	}
+
+	&__social {
+		justify-content: flex-start;
+	}
+
+	&__copyright {
+		padding: 11px 0;
+	}
+}
+@media (max-width: $md3+px) {
+	.footer {
+		&__inner {
+			grid-template-columns: 1fr minmax(auto, 140px) 1fr;
+			grid-template-rows: auto auto;
+			gap: 30px 0;
+			padding: rem(20) 0;
+			grid-template-areas:
+				"desc desc desc"
+				"navigations social helps";
+		}
+
+		&__desc {
+			grid-area: desc;
+			text-align: center;
+		}
+		&__navigation {
+			grid-area: navigations;
+		}
+		&__helps {
+			grid-area: helps;
+			justify-self: end;
+		}
+		&__media {
+			grid-area: social;
+		}
+	}
+}
+@media (max-width: 580px) {
+	.footer {
+		&__inner {
+			padding: rem(15) 0;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto auto auto;
+			gap: 30px 0;
+			padding: rem(20) 0;
+			grid-template-areas:
+				"desc desc"
+				"navigations social"
+				" helps helps";
+			gap: 20px 0;
+		}
+		&__caption {
+			margin-bottom: rem(12);
+		}
+		&__text {
+			margin-bottom: rem(12);
+		}
+		&__media {
+			justify-self: center;
+		}
+			&__helps {
+			justify-self: center;
+			text-align: center;
+		}
+	}
+}
+//====================================================================================================

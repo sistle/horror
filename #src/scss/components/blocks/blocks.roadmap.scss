@@ -1,0 +1,181 @@
+.roadmap {
+	&__inner {
+		background-color: $lightRed;
+		border-radius: 25px;
+		padding: rem(30) rem(23);
+		background-image: url(../../../img/icons/wave.svg);
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		background-size: 900px;
+		margin: 0 -30px rem(65) -30px;
+	}
+	&__title {
+		text-align: center;
+		margin-bottom: rem(40);
+	}
+}
+
+.roadmap-main {
+	display: grid;
+	grid-template: 0.5fr 0.5fr /1fr 1fr;
+	row-gap: 15px;
+	grid-template-areas:
+		"one two"
+		"one three";
+
+	&__col {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__col--one {
+		grid-area: one;
+	}
+	&__col--two {
+		grid-area: two;
+	}
+	&__col--three {
+		grid-area: three;
+	}
+	&__count {
+		flex: 0 0 15%;
+		display: flex;
+		justify-content: center;
+		padding: 0 10px;
+	}
+	&__icon {
+		font-weight: bold;
+		font-size: 20px;
+	
+		width: 52px;
+		height: 52px;
+		position: relative;
+		z-index: 2;
+
+		@extend %flex-center;
+
+		&::before {
+			@extend %icons;
+			content: "\e902";
+			font-size: 94px;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			color: $red;
+		}
+	}
+	&__content {
+		position: relative;
+		flex: 0 1 85%;
+		padding: 0 0 0 25px;
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0px;
+			top: 50%;
+			height: 100%;
+			width: 1px;
+			transform: translateY(-50%);
+			border: 1px solid rgba(255, 255, 255, 0.16);
+		}
+	}
+
+	&__suptitle {
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 1.9;
+		opacity: 0.4;
+	}
+	&__heading {
+		font-weight: bold;
+		font-size: rem(20);
+
+		margin-bottom: rem(26);
+	}
+
+	&__item {
+		font-weight: 600;
+		font-size: 1rem;
+		line-height: 1.4;
+		&:not(:last-child) {
+			margin-bottom: 14px;
+		}
+	}
+	&__item--size-big {
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+	&__sublist {
+		max-width: rem(250);
+		margin-left: 30px;
+		padding: 7px 0 0 0;
+	}
+	&__sublist--size-big {
+		padding: rem(14) 0 0 0;
+	}
+	&__subitem,
+	&__suibtem-text {
+		display: flex;
+		align-items: center;
+		font-weight: 300;
+		font-size: 14px;
+		margin-bottom: 1rem;
+	}
+	&__subitem-percent {
+		font-weight: 800;
+		font-size: 22px;
+		margin-right: 10px;
+	}
+}
+@media (max-width: 1210px) {
+	.roadmap {
+		&__inner {
+			margin: 0px 0px rem(65) 0px;
+		}
+	}
+}
+@media (max-width: $md2+px) {
+	.roadmap {
+		&__inner {
+			padding: rem(30) rem(15);
+		}
+	}
+}
+@media (max-width: $md3+px) {
+	.roadmap {
+		&__inner {
+			margin: 0px 0px rem(45) 0px;
+		}
+		&__title {
+			margin-bottom: rem(15);
+		}
+	}
+	.roadmap-main {
+		grid-template: 1fr / repeat(3, auto);
+		gap: 20px 0;
+		grid-template-areas:
+			"one"
+			"two"
+			"three";
+		&__count {
+			flex: none;
+		}
+		&__col {
+			flex-direction: column;
+			gap: rem(40) 0;
+		}
+		&__item,
+		&__item--size-big {
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+		&__sublist,
+		&__sublist--size-big {
+			max-width: 80%;
+			padding: 10px 0 0 0;
+			margin-left: 15px;
+		}
+	}
+}
