@@ -1,7 +1,7 @@
 {
 	"name": "fls-gulp",
 	"version": "1.0.0",
-	"description": "Сборка gulp",
+	"description": "gulp",
 	"main": "index.html",
 	"homepage": "https://sistle.github.io/horror",
 	"author": "Fls",
